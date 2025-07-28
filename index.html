@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taksu Usada - Digitalisasi Kearifan Lokal Usada Bali</title>
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-dark-green: #18432A;
+            --secondary-green: #3D650F;
+            --accent-green: #65AE6E;
+            --light-green: #C9FA91;
+            --primary-brown: #61AE62;
+            --dark-brown: #53AA55;
+            --cream: #F5F3E9;
+            --dark-text: #2C1810;
+            --light-text: #8B7355;
+            --white: #FFFFFF;
+            --shadow-light: rgba(24, 67, 42, 0.1);
+            --shadow-medium: rgba(24, 67, 42, 0.2);
+            --shadow-dark: rgba(24, 67, 42, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: linear-gradient(135deg, var(--cream) 0%, #F8F6F0 50%, var(--cream) 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Styles */
+        header {
+    background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--secondary-green) 100%);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 0;
+    box-shadow: 0 8px 32px var(--shadow-medium);
+    top: 0;
+    left: 0;
+    right: 0;
+    position: sticky;
+    z-index: 1000;
+    width: 100%;      
+    transition: all 0.3s ease;
+}
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="leaf" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,2 Q15,8 10,14 Q5,8 10,2" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23leaf)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-dark-green);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary-dark-green);
+            font-weight: 700;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(101, 174, 110, 0.3);
+        }
+
+        .logo h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .logo p {
+            color: var(--light-green);
+            font-size: 1rem;
+            font-weight: 400;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+        }
+        
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+       
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 11rem 0;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+            background-image: url(BGH.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+           
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, var(--light-green) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, var(--accent-green) 0%, transparent 50%);
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+           background: linear-gradient(135deg, #0a1f14 0%, var(--secondary-green) 80%, var(--light-green) 100%);
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            color: white;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 5rem 0;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 16px 48px var(--shadow-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(24, 67, 42, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-green) 0%, var(--light-green) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 64px var(--shadow-medium);
+            border-color: var(--accent-green);
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--secondary-green) 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            box-shadow: 0 12px 32px var(--shadow-medium);
+            position: relative;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-dark-green);
+        }
+
+        .feature-card p {
+            color: var(--light-text);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Section Styles */
+        .section {
+            background: var(--white);
+            margin: 3rem 0;
+            padding: 4rem 3rem;
+            border-radius: 32px;
+            box-shadow: 0 16px 48px var(--shadow-light);
+            border: 1px solid rgba(24, 67, 42, 0.08);
+        }
+
+        .section h3 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--secondary-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Author Cards */
+        .author-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .author-card {
+           background-image: url(bg.png);
+            padding: 3rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 12px 32px var(--primary-dark-green);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .author-card:hover {
+            border-color: var(--secondary-green);
+            transform: translateY(-8px);
+        }
+
+        .author-avatar {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--accent-green) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: var(--white);
+            font-weight: 700;
+            box-shadow: 0 16px 40px var(--shadow-medium);
+        }
+
+        .author-card h4 {
+            font-size: 1.4rem;
+            font-weight: 1000;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .author-card p {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .author-card p strong {
+            color: rgb(219, 219, 125);
+            font-weight: 600;
+        }
+
+        /* Video Cards */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .video-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 12px 32px var(--shadow-light);
+            border: 1px solid rgba(24, 67, 42, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px var(--shadow-medium);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--secondary-green) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+        .video-placeholder img{
+            width: 100%;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .video-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-dark-green);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--secondary-green) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px var(--shadow-dark);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Download Section */
+        .download-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px var(--shadow-light);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--accent-green) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 8px 24px var(--shadow-medium);
+        }
+
+        .download-btn {
+            display: block;
+            width: 320px;
+            margin: 3rem auto;
+            padding: 18px 36px;
+            background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--secondary-green) 100%);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 32px var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px var(--shadow-dark);
+        }
+
+        /* Info Boxes */
+        .info-box {
+            margin-top: 2.5rem;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border-left: 6px solid;
+        }
+
+        .info-box.warning {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFFBF0 100%);
+            border-color: #FF8F00;
+        }
+
+        .info-box.tip {
+            background: linear-gradient(135deg, #E8F5E8 0%, #F1F8F1 100%);
+            border-color: var(--accent-green);
+        }
+
+        .info-box h4 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .info-box.warning h4 {
+            color: #E65100;
+        }
+
+        .info-box.tip h4 {
+            color: var(--primary-dark-green);
+        }
+
+        .info-box ul {
+            padding-left: 1.5rem;
+        }
+
+        .info-box li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark-green) 0%, var(--secondary-green) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        footer p {
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Ultra Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            nav{
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .logo {
+                gap: 15px;
+            }
+
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .logo-icon img {
+                width: 20px;
+            }
+
+            .hero {
+                padding: 8rem 0 6rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                padding: 3rem 0;
+                gap: 2rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .feature-icon img {
+                width: 60px;
+            }
+
+            .section {
+                padding: 3rem 2rem;
+                margin: 2rem 0;
+            }
+
+            .section h3 {
+                font-size: 2.2rem;
+            }
+
+            .author-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .author-card {
+                padding: 2rem;
+            }
+
+            .author-avatar {
+                width: 120px;
+                height: 120px;
+            }
+
+            .author-avatar img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .video-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .video-card {
+                padding: 2rem;
+            }
+
+            .video-placeholder {
+                height: 180px;
+            }
+
+            .download-steps {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .step-card {
+                padding: 2rem;
+            }
+
+            .download-btn {
+                width: 90%;
+                max-width: 280px;
+                font-size: 1.1rem;
+                padding: 16px 24px;
+            }
+
+            .info-box {
+                padding: 2rem;
+                margin-top: 2rem;
+            }
+        }
+
+        /* Small Mobile (480px and below) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            header {
+                padding: 1rem 0;
+            }
+
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-icon img {
+                width: 18px;
+            }
+
+            .logo img {
+                width: 180px;
+            }
+
+            .logo p {
+                font-size: 0.9rem;
+            }
+
+            nav ul {
+                gap: 6px;
+            }
+
+            nav a {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 6rem 0 4rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .features {
+                padding: 2rem 0;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .feature-icon img {
+                width: 50px;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .feature-card p {
+                font-size: 0.95rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+                margin: 1.5rem 0;
+                border-radius: 20px;
+            }
+
+            .section h3 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .author-card {
+                padding: 1.5rem;
+            }
+
+            .author-avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .author-avatar img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .author-card h4 {
+                font-size: 1.2rem;
+            }
+
+            .author-card p {
+                font-size: 0.9rem;
+            }
+
+            .video-card {
+                padding: 1.5rem;
+            }
+
+            .video-placeholder {
+                height: 160px;
+            }
+
+            .video-card h4 {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .step-card {
+                padding: 1.5rem;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .download-btn {
+                width: 95%;
+                max-width: 260px;
+                font-size: 1rem;
+                padding: 14px 20px;
+            }
+
+            .info-box {
+                padding: 1.5rem;
+                border-left-width: 4px;
+            }
+
+            .info-box h4 {
+                font-size: 1.1rem;
+            }
+
+            .info-box li {
+                font-size: 0.9rem;
+            }
+
+            footer {
+                padding: 2rem 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Mobile (360px and below) */
+        @media (max-width: 360px) {
+            .container {
+                padding: 0 8px;
+            }
+
+            .logo img {
+                width: 160px;
+            }
+
+            .logo p {
+                font-size: 0.8rem;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .features {
+                gap: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .feature-icon img {
+                width: 40px;
+            }
+
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+
+            .section {
+                padding: 1.5rem 1rem;
+            }
+
+            .section h3 {
+                font-size: 1.6rem;
+            }
+
+            .author-avatar {
+                width: 90px;
+                height: 90px;
+            }
+
+            .author-avatar img {
+                width: 90px;
+                height: 90px;
+            }
+
+            .author-card h4 {
+                font-size: 1.1rem;
+            }
+
+            .video-placeholder {
+                height: 140px;
+            }
+
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            .download-btn {
+                font-size: 0.95rem;
+                padding: 12px 18px;
+            }
+
+            .info-box {
+                padding: 1.2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon"><img style="width: 70px; border-radius: 20px;"  src="icon.png" alt=""></div>
+                    <div>
+                        <img width="235px" src="12.png" alt="">
+                        <p>Digitalisasi Kearifan Lokal Bali</p>
+                    </div>
+                </div>
+               <nav>
+    
+        <div>
+           <a href="#beranda">Beranda</a> 
+        </div>
+
+        <div>
+              <a href="#fitur">Fitur</a>
+        </div>
+
+        <div>
+             <a href="#penulis">Penulis</a>
+        </div>
+
+        <div>
+            <a href="#video">Video</a>
+        </div>
+
+        <div>
+              <a href="#download">Download</a>
+        </div>
+      
+    
+</nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="beranda" class="hero">
+            <div class="container" id="beranda">
+                <div class="hero-content">
+                    <h2>Transformasi Digital Usada Bali</h2>
+                    <p>Aplikasi mobile inovatif yang mendigitalisasi warisan pengobatan tradisional Bali (Usada Bali) menjadi platform edukatif dan interaktif berbasis teknologi modern. Dikembangkan menggunakan React Native dan Laravel untuk menjembatani pengetahuan herbal leluhur dengan kebutuhan masyarakat masa kini.</p>
+                </div>
+            </div>
+        </section>
+
+       <section id="fitur" class="container">
+    <div class="features">
+    
+        <div class="feature-card fade-in">
+            <div class="feature-icon"><img style="width: 100px;" src="15.png" alt=""></div>
+            <h3>Scan Herbal</h3>
+            <p>Melalui fitur Scan Herbal, pengguna cukup mengarahkan kamera ke tanaman herbal untuk mengenali jenis dan manfaatnya secara instan.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+            <div class="feature-icon"><img style="width: 100px;" src="17.png" alt=""></div>
+            <h3>Konsultasi</h3>
+            <p>Fitur Konsultasi menghubungkan pengguna dengan ahli herbal Usada Bali untuk layanan personal dan holistik, pengguna dapat memilih praktisi dan mengatur jadwal. </p>
+        </div>
+        
+        <div class="feature-card fade-in">
+            <div class="feature-icon"><img style="width: 100px;" src="16.png" alt=""></div>
+            <h3>Artikel Usada</h3>
+            <p>Fitur Artikel menjadi pusat pengetahuan Taksu Usada, menyediakan resep dan informasi pengobatan tradisional Bali yang diwariskan turun-temurun.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+            <div class="feature-icon"><img style="width: 100px;" src="18.png" alt=""></div>
+            <h3>E-Commerce</h3>
+            <p>Fitur Marketplace memudahkan pembelian produk herbal Bali sekaligus memberdayakan petani dan produsen lokal dengan sistem pembayaran dan pelacakan yang aman.</p>
+        </div>
+    </div>
+</section>
+
+        <section id="penulis" class="section">
+            <div class="container">
+                <h3>Founder of Taksu Usada</h3>
+                <div class="author-grid">
+                    <div class="author-card fade-in">
+                      <div class="author-avatar"><img width="150px" height="150px" style="border-radius: 500px;" src="thio.jpg" alt=""></div>
+                        <h4>I Putu Thio Mahapradana</h4>
+                        <p><strong>Concept Creator & Medical Data Analyst</strong></p>
+                        <p>Saya adalah mahasiswa kedokteran yang memiliki semangat kuat dalam pengembangan kesehatan berbasis kearifan lokal. Ketertarikan saya terfokus pada penelitian medis dan pemanfaatan data sebagai landasan pengembangan solusi kesehatan berkelanjutan.</p>
+                    </div>
+                    
+                    <div class="author-card fade-in">
+                        <div class="author-avatar"><img width="180px" height="145px" style="border-radius: 500px;" src="dedik.jpg" alt=""></div>
+                        <h4>Kadek Adika Ananda Aryana</h4>
+                        <p><strong>Lead Developer & Cultural Digitalization Specialist</strong></p>
+                        <p>Saya adalah mahasiswa Informatika yang berfokus pada penerapan teknologi untuk pelestarian budaya. Berawal dari ide Taksu Usada, saya bertanggung jawab dalam merancang dan mengembangkan platform digital yang menghubungkan pengetahuan tradisional dengan inovasi digital.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box tip">
+                    <h4>🌿 Inovasi Taksu Usada</h4>
+                    <p>Inovasi ini merupakan upaya pelestarian budaya guna mendukung inovasi layanan kesehatan berbasis etnomedicine. Dengan menggabungkan teknologi modern seperti AI dan Mobile Development, kami menciptakan jembatan antara wisdom tradisional dan kebutuhan digital masa kini.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="section">
+            <div class="container">
+                <h3>Video Tutorial & Demonstrasi</h3>
+                <div class="video-container">
+                    <div class="video-card fade-in">
+                        <div class="video-placeholder"> <img src="VIDIO1.jpg" alt=""></div>
+                        <h4>Pengenalan Aplikasi</h4>
+                        <p>Gambaran umum tentang fitur-fitur utama Taksu Usada dan cara kerja aplikasinya.</p>
+                        <a href="https://drive.google.com/drive/folders/1GPAju9qq3miMrxV9KNLRmOxTqMw4yan9"><button class="btn" onclick="showVideoAlert('Pengenalan Aplikasi')">Tonton Video</button></a>
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                       <div class="video-placeholder"> <img src="VIDIO3.jpg" alt=""></div>
+                        <h4>Demonstrasi Fitur</h4>
+                        <p>Pelajari lebih dalam beragam fitur Taksu Usada yang menggabungkan kearifan lokal dan teknologi digital.</p>
+                        <a href="https://drive.google.com/drive/folders/1dr-RJe5n_58ptFTCrFefJtIeynHs2pmU"><button class="btn" onclick="showVideoAlert('Tutorial Scan Herbal')">Tonton Video</button></a> 
+                    </div>
+                    
+                    <div class="video-card fade-in">
+                      <div class="video-placeholder"> <img src="VIDIO2.jpg" alt=""></div>
+                        <h4>Alur Pengembangan</h4>
+                       <p>Penjelasan tentang proses pengembangan aplikasi Taksu Usada Bali.</p>
+                       <a href="https://drive.google.com/drive/folders/1dK-82IYeExNF4ZgDT488-3KIPqD_8RSM"><button class="btn" onclick="showVideoAlert('Alur Taksu Usada')">Tonton Video</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="section">
+    <div class="container">
+        <h3>Download Aplikasi</h3>
+        <p style="text-align: center; margin-bottom: 3rem; font-size: 1.2rem; color: var(--light-text);">
+            Ikuti langkah-langkah berikut untuk mengunduh dan menginstal aplikasi Taksu Usada dari Google Drive:
+        </p>
+
+        <div class="download-steps">
+            <div class="step-card fade-in">
+                <div class="step-number">1</div>
+                <h4>Klik Link Download</h4>
+                <p>Klik tombol download di bawah untuk mengakses file aplikasi di Google Drive.</p>
+            </div>
+
+            <div class="step-card fade-in">
+                <div class="step-number">2</div>
+                <h4>Buka Google Drive</h4>
+                <p>Link akan membawa Anda ke halaman Google Drive tempat file aplikasi tersimpan.</p>
+            </div>
+
+            <div class="step-card fade-in">
+                <div class="step-number">3</div>
+                <h4>Pilih File APK</h4>
+                <p>Temukan file APK Taksu Usada di dalam folder Google Drive dan klik untuk membuka opsi download.</p>
+            </div>
+
+            <div class="step-card fade-in">
+                <div class="step-number">4</div>
+                <h4>Download File APK</h4>
+                <p>Klik ikon download di Google Drive untuk mengunduh file APK ke perangkat Anda.</p>
+            </div>
+
+            <div class="step-card fade-in">
+                <div class="step-number">5</div>
+                <h4>Izinkan Instalasi</h4>
+                <p>Pastikan perangkat Anda mengizinkan instalasi dari sumber tidak dikenal di pengaturan keamanan.</p>
+            </div>
+
+            <div class="step-card fade-in">
+                <div class="step-number">6</div>
+                <h4>Install Aplikasi</h4>
+                <p>Buka file APK yang telah diunduh dan ikuti petunjuk instalasi hingga aplikasi terpasang dengan sempurna.</p>
+            </div>
+        </div>
+
+        <a href="https://drive.google.com/drive/folders/162rwM1guGdDWJxFfnfqCQYCwV9VUxzUC" class="download-btn" onclick="showDownloadAlert()">Download Aplikasi Taksu Usada</a>
+
+        <div class="info-box warning">
+            <h4>⚠️ Penting untuk Diperhatikan</h4>
+            <ul>
+                <li>Pastikan perangkat Android Anda mengizinkan instalasi dari sumber tidak dikenal</li>
+                <li>Aplikasi memerlukan koneksi internet untuk fitur scan herbal dan konsultasi</li>
+                <li>Pastikan memiliki ruang penyimpanan yang cukup</li>
+                <li>Pastikan HP Android anda memiliki versi yang kompatibel</li>
+            </ul>
+        </div>
+
+        <div class="info-box tip">
+            <h4>💡 Tips Penggunaan</h4>
+            <ul>
+                <li>Gunakan pencahayaan yang baik saat melakukan scan herbal untuk hasil terbaik</li>
+                <li>Baca artikel edukatif secara berkala untuk memperkaya pengetahuan</li>
+                <li>Bergabunglah dengan komunitas untuk berbagi pengalaman</li>
+                <li>Manfaatkan fitur scan Herbal untuk mengetahui tumbuhan sekitar anda</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Taksu Usada. Dikembangkan dengan ❤️ untuk pelestarian budaya Bali.</p>
+            <p>Menghubungkan kearifan tradisional dengan teknologi modern.</p>
+        </div>
+    </footer>
+
+    <script>
+// Fungsi untuk animasi scroll
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe semua elemen dengan class fade-in
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Fungsi untuk smooth scrolling - DIPERBAIKI untuk Beranda ke paling atas
+function initSmoothScrolling() {
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+    navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            
+            // Jika klik "Beranda", scroll ke paling atas (position 0)
+            if (targetId === 'beranda') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                updateActiveNav(this);
+                return;
+            }
+            
+            // Untuk section lainnya, cari target berdasarkan ID
+            const target = document.getElementById(targetId);
+            if (target) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                let targetPosition = target.offsetTop - headerHeight - 20;
+                
+                // Special handling untuk section fitur yang ada di dalam container
+                if (targetId === 'fitur') {
+                    const fiturSection = document.querySelector('#fitur');
+                    if (fiturSection) {
+                        targetPosition = fiturSection.offsetTop - headerHeight - 50;
+                    }
+                }
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                updateActiveNav(this);
+            }
+        });
+    });
+    
+    // Highlight active section on scroll
+    let isScrolling = false;
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            requestAnimationFrame(() => {
+                updateActiveNavOnScroll();
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
+    });
+}
+
+// Fungsi untuk update active navigation
+function updateActiveNav(activeLink) {
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => link.classList.remove('active'));
+    activeLink.classList.add('active');
+}
+
+// Fungsi untuk update active nav saat scroll - DIPERBAIKI
+function updateActiveNavOnScroll() {
+    const headerHeight = document.querySelector('header').offsetHeight;
+    const scrollPos = window.scrollY;
+    
+    // Jika di bagian paling atas (0-400px dari hero), aktifkan "Beranda"
+    const heroSection = document.querySelector('.hero');
+    if (heroSection && scrollPos <= heroSection.offsetHeight - 200) {
+        updateActiveNavById('beranda');
+        return;
+    }
+    
+    // Definisi manual posisi sections untuk akurasi lebih baik
+    const sectionPositions = [
+        { id: 'fitur', element: document.querySelector('#fitur') },
+        { id: 'penulis', element: document.querySelector('#penulis') },
+        { id: 'video', element: document.querySelector('#video') },
+        { id: 'download', element: document.querySelector('#download') }
+    ];
+    
+    let currentActiveSection = 'beranda'; // default
+    
+    // Loop through sections untuk mencari section aktif
+    sectionPositions.forEach((section, index) => {
+        if (!section.element) return;
+        
+        const sectionTop = section.element.offsetTop - headerHeight - 150;
+        const sectionBottom = sectionTop + section.element.offsetHeight;
+        
+        // Check if scroll position is within this section
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            currentActiveSection = section.id;
+        }
+        
+        // Special case for the last section
+        if (index === sectionPositions.length - 1 && scrollPos >= sectionTop) {
+            currentActiveSection = section.id;
+        }
+    });
+    
+    // Update active nav link
+    updateActiveNavById(currentActiveSection);
+}
+
+// Helper function untuk update active nav berdasarkan ID
+function updateActiveNavById(sectionId) {
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Fungsi untuk menampilkan alert video
+function showVideoAlert(videoTitle) {
+    alert(`Selamat Menyaksikan Video "${videoTitle}" ! \n\nTerima kasih atas minat Anda terhadap konten edukatif Taksu Usada.`);
+}
+
+// Fungsi untuk menampilkan alert download
+function showDownloadAlert() {
+    const confirmed = confirm(
+        'Download Taksu Usada APK\n\n' +
+        'Anda akan diarahkan ke Google Drive untuk mengunduh aplikasi.\n\n' +
+        'Pastikan perangkat Anda:\n' +
+        '• Versi android yang kompatibel\n' +
+        '• Memiliki ruang penyimpanan yang cukup\n' +
+        '• Mengizinkan instalasi dari sumber tidak dikenal\n\n' +
+        'Lanjutkan download?'
+    );
+    
+    if (confirmed) {
+        alert('🔗 Link download akan segera tersedia!\n\nSilakan hubungi tim developer untuk mendapatkan akses aplikasi.');
+    }
+}
+
+// Fungsi untuk animasi hover pada cards
+function initCardAnimations() {
+    const cards = document.querySelectorAll('.feature-card, .author-card, .video-card, .step-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-12px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+}
+
+// Fungsi untuk menambahkan efek typing pada hero text
+function initTypingEffect() {
+    const heroTitle = document.querySelector('.hero h2');
+    if (!heroTitle) return;
+    
+    const originalText = heroTitle.textContent;
+    heroTitle.textContent = '';
+    
+    let i = 0;
+    const typingInterval = setInterval(() => {
+        heroTitle.textContent += originalText.charAt(i);
+        i++;
+        if (i >= originalText.length) {
+            clearInterval(typingInterval);
+        }
+    }, 50);
+}
+
+// Fungsi untuk menambahkan parallax effect pada hero section
+function initParallaxEffect() {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        const heroContent = document.querySelector('.hero-content');
+        
+        if (hero && heroContent) {
+            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            hero.style.opacity = Math.max(0.3, 1 - scrolled / (window.innerHeight * 0.8));
+        }
+    });
+}
+
+// Fungsi untuk menambahkan loading animation
+function showLoadingAnimation() {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+}
+
+// Event listener untuk DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    showLoadingAnimation();
+    initScrollAnimations();
+    initSmoothScrolling();
+    initCardAnimations();
+    
+    // Set initial active nav - Beranda aktif saat pertama load
+    const berandaNavLink = document.querySelector('nav a[href="#beranda"]');
+    if (berandaNavLink) {
+        berandaNavLink.classList.add('active');
+    }
+    
+    // Delay untuk typing effect agar lebih terlihat
+    setTimeout(() => {
+        initTypingEffect();
+    }, 500);
+    
+    initParallaxEffect();
+    
+    console.log('Taksu Usada website loaded successfully!');
+    console.log('Aplikasi digitalisasi kearifan lokal Usada Bali');
+});
+
+// Event listener untuk resize window
+window.addEventListener('resize', function() {
+    console.log('Window resized:', window.innerWidth, 'x', window.innerHeight);
+    // Rekalkulasi posisi section setelah resize
+    setTimeout(updateActiveNavOnScroll, 100);
+});
+
+// Event listener untuk scroll dengan throttling
+let scrollTimeout;
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', function() {
+    const currentScrollTop = window.pageYOffset;
+    
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        const header = document.querySelector('header');
+        
+        // Header background effect
+        if (currentScrollTop > 100) {
+            header.style.backdropFilter = 'blur(20px)';
+            header.style.backgroundColor = 'rgba(24, 67, 42, 0.95)';
+        } else {
+            header.style.backdropFilter = 'blur(10px)';
+            header.style.backgroundColor = 'rgba(24, 67, 42, 0.9)';
+        }
+        
+        lastScrollTop = currentScrollTop;
+    }, 10);
+}, { passive: true });
+    </script>
+</body>
+</html>
